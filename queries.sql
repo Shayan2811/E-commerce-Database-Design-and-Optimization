@@ -21,7 +21,7 @@ GROUP BY "customers"."first_name", "customers"."last_name";
 SELECT "categories"."name", COUNT("products"."product_id") AS "product_count"
 FROM "categories"
 LEFT JOIN "products" ON "categories"."category_id" = "products"."category_id"
-GROUP BY "categories.name";
+GROUP BY "categories"."name";
 
 -- Retrieve Latest Orders
 SELECT "orders"."order_id", "orders"."order_date", "customers"."first_name", "customers"."last_name"
