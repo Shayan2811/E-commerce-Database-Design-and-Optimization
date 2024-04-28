@@ -39,7 +39,7 @@ WHERE "orders"."order_id" IS NULL;
 -- Calculate Total Sales by Category
 SELECT "categories"."name" AS "category_name", SUM("products"."price" * "order_items"."quantity") AS "total_sales"
 FROM "categories"
-LEFT JOIN "products" ON "customers"."category_id" = "products"."category_id"
+LEFT JOIN "products" ON "categories"."category_id" = "products"."category_id"
 LEFT JOIN "order_items" ON "products"."product_id" = "order_items"."product_id"
 GROUP BY "categories"."name";
 
