@@ -7,6 +7,13 @@ CREATE TABLE "customers" (
     PRIMARY KEY ("customer_id")
 );
 
+-- Categories table
+CREATE TABLE "categories" (
+    "category_id" SERIAL,
+    "name" VARCHAR(100) NOT NULL,
+    PRIMARY KEY ("category_id")
+);
+
 -- Products table
 CREATE TABLE "products" (
     "product_id" SERIAL,
@@ -15,13 +22,6 @@ CREATE TABLE "products" (
     "price" DECIMAL(10, 2) NOT NULL,
     PRIMARY KEY ("product_id"),
     FOREIGN KEY ("category_id") REFERENCES "categories"("category_id")
-);
-
--- Categories table
-CREATE TABLE "categories" (
-    "category_id" SERIAL,
-    "name" VARCHAR(100) NOT NULL,
-    PRIMARY KEY ("category_id")
 );
 
 -- Orders table
