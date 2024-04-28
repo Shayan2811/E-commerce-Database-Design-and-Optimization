@@ -5,7 +5,7 @@ SELECT * FROM "customers";
 SELECT * FROM "products"
 WHERE "category_id" = (
   SELECT "category_id" FROM "categories" 
-  WHERE "name" = "Electronics"
+  WHERE "name" = Electronics
 );
 
 -- Calculate Total Order Amount for a Customer
